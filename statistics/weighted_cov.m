@@ -24,6 +24,11 @@ function weightedCov = weighted_cov(X, weights, weightedMean)
 %   email: jonathan.grizou@inria.fr
 %   Website: https://flowers.inria.fr/jgrizou/
 
+%   may be improved, see:
+%   http://en.wikipedia.org/wiki/Weighted_mean
+%   http://stats.stackexchange.com/questions/61225/correct-equation-for-weighted-unbiased-sample-covariance/61298#61298
+
+
 if nargin==0 
     error('weighted_cov:NotEnoughInputs','Not enough input arguments.'); 
 end
