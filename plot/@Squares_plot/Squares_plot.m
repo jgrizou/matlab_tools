@@ -44,6 +44,13 @@ classdef Squares_plot < handle
             end
         end
         
+        function id = get_id(self, position)
+            id = find(all(repmat(position, size(self.positions,1), 1) == self.positions, 2));
+            if isempty(id)
+                error('position not registered')
+            end
+        end
+        
         function set_color(self, id, color)
             self.colors{id} = color;
         end
@@ -117,7 +124,7 @@ classdef Squares_plot < handle
             if nargin < 3
                 color = 'k';
             end
-            scatter(self.positions(id,1), self.positions(id, 2), self.dotSize, 'filled', color)
+            scatter(self.positions(id,1), self.positions(id, 2), self.dotSize, color, 'filled')
             if ~holding
                 hold off
             end

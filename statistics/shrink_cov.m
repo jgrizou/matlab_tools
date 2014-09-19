@@ -23,9 +23,6 @@ function regCov = shrink_cov(cov, lambda)
 %   email: jonathan.grizou@inria.fr
 %   Website: https://flowers.inria.fr/jgrizou/
 
-%   You may consider an automatic adaptatoin of lambda,
-%   automatic covariance adaptation http://www.ledoit.net/ole2_abstract.htm
-
 
 if ~ismatrix(cov)
     error('shrink_cov:InputDim', 'cov must be 2-D.'); 
