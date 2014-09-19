@@ -4,7 +4,7 @@ function pX = log_normalize_row(logX)
 %   Syntax: pX = log_normalize_row(logX)
 %
 %   Inputs:
-%       logX - Non-negative log value matrix [matrix (nObservations x nValues)]
+%       logX - log value matrix [matrix (nObservations x nValues)]
 %
 %   Outputs:
 %       pX - Normalized logX, each row is a discrete probability distribution [matrix (nObservations x nValues)]
