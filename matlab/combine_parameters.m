@@ -1,4 +1,4 @@
-function combinedParamStructs = combine_parameters(varargin)
+function [combinedParamStructs, nCombination] = combine_parameters(varargin)
 % Example:
 %   combinedParamStructs = combine_parameters('param1', {1,2,3}, 'param2', {'e', 'r'}, 'param3', 1:2)
 % Look at the result:
