@@ -1,4 +1,4 @@
-classdef Logger < dynamicprops
+classdef Logger < dynamicprops & matlab.mixin.Copyable
     %@LOGGER
     %
     %   I took inspiration from logger-1.0 by Pavan Mallapragada, MIT, Otcober, 2011
@@ -381,7 +381,9 @@ classdef Logger < dynamicprops
 
             self.msgFunc = savedStruct.msgFunc;
             self.silent = savedStruct.silent;            
-        end      
+        end   
+        
+
         
         function names = ensure_cell_of_string(names)
             if ischar(names)
@@ -398,5 +400,14 @@ classdef Logger < dynamicprops
                 error('Logger:ensure_cell_of_values', 'values should be a cell vector')
             end
         end
+    end
+    
+    methods(Access = protected)
+        
+        % Override copyElement method:
+        function copySelf = copyElement(self)
+            copySelf = Logger.loadobj(self.saveobj());
+        end
+        
     end
 end
