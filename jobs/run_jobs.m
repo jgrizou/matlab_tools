@@ -10,6 +10,7 @@ if ~exist(runFolder, 'dir')
     mkdir(runFolder)
 end
 addpath(runFolder);
+
 if ~exist(endFolder, 'dir')
     mkdir(endFolder)
 end
@@ -42,8 +43,8 @@ while true
             end
         end
     else
-        disp('No job available, waiting...')
-        pause(waitingTime)
+        disp('No job available, exiting...')
+        break
     end
     disp(' ')
 end
