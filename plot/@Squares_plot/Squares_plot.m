@@ -90,19 +90,14 @@ classdef Squares_plot < handle
             end
         end
         
-        function draw(self, cbar, limMinMax)
-            if nargin < 2
-                cbar = false;
-            end
+        function draw(self, limMinMax)
             for iPosition = 1:self.nSquares
                 self.draw_square(self.positions(iPosition, :), self.colors{iPosition}, self.chars{iPosition}) 
             end
             axis equal
             axis off
-            if cbar
+            if nargin > 1
                 colorbar
-            end
-            if nargin > 2
                 caxis(limMinMax)
             end
         end
