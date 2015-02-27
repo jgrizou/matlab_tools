@@ -1,3 +1,6 @@
 [submodule "logger"]
 	path = logger
 	url = https://github.com/jgrizou/logger
+[submodule "plot/plot2svg"]
+	path = plot/plot2svg
+	url = https://github.com/jschwizer99/plot2svg.git
